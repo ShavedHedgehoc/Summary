@@ -1,10 +1,10 @@
 import UserStore from "./UserStore";
 
 class RootStore {
-    userStore: UserStore;
+    user: UserStore;
 
     constructor(){
-        this.userStore = new UserStore();
+        this.user = new UserStore();
     }
 }
 

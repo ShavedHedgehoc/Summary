@@ -1,20 +1,20 @@
+import React from 'react';
 import { observer } from 'mobx-react-lite';
-import React, { createContext, useContext } from 'react';
-import { Context } from '.';
+import { BrowserRouter } from 'react-router-dom';
 import AppRouter from "./components/AppRouter";
-import UserStore from './store/UserStore';
+import { useRootStore } from './store/RootStateContext';
 
 
 const App = observer(() => {
-    const { userStore }=useContext(Context)
+
+    const { userStore } = useRootStore();
+    
     return (
-        <div>
-            {userStore && userStore._isAuth && <><nav className="navbar navbar-dark bg-dark">fsdfdsfsf</nav></>}
-            <AppRouter />
-        </div>
-    )
+        <BrowserRouter>        
+            <div> <h1>{userStore.isAuth && 'dfdsfdsfs'}</h1></div>
+            <AppRouter />        
+        </BrowserRouter>
+    )    
 });
-
-
 
 export default App;

@@ -1,31 +1,34 @@
-import { makeAutoObservable, observable } from "mobx"
+import { computed, makeAutoObservable, observable } from "mobx"
 
-export interface IUserStore {
-    _isAuth: boolean;
-    _user: object;
-}
+// export interface IUserStore {
+//     _isAuth: boolean;
+//     _user: object;
+// }
 
-export default class UserStore implements IUserStore {
-    
-    
-    @observable _isAuth = false
-    @observable _user = {}
+// export default class UserStore implements IUserStore {
+export default class UserStore {
 
-    constructor() {
-        makeAutoObservable(this)       
-    }
+    @observable isAuth = false
+    @observable user = {}
 
-    setIsAuth(bool: boolean) {
-        this._isAuth = bool
-    }
-    setUser(user: object) {
-        this._user = user
-    }
+    // constructor() {
 
-    get isAuth() {
-        return this._isAuth
-    }
-    get user() {
-        return this._user
-    }
+    //     makeAutoObservable(this)       
+    // }
+
+    // setIsAuth(bool: boolean) {
+    //     this._isAuth = bool
+    // }
+    // setUser(user: object) {
+    //     this._user = user
+    // }
+
+
+    // get isAuth() {
+    //     return this._isAuth
+    // }
+
+    // get user() {
+    //     return this._user
+    // }
 }
