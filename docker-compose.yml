@@ -1,18 +1,18 @@
 version: '3'
 
 services:
-  # front:
-  #   container_name: front
-  #   build: 
-  #     context:  .
-  #     dockerfile: docker/frontend/Dockerfile
-  #   depends_on:
-  #     - api
-  #   ports:
-  #     - "3000:3000"
+  front:
+    container_name: front
+    build: 
+      context:  .
+      dockerfile: docker/frontend/Dockerfile
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
    
-  #   command: npm start server
-  #   # restart: always
+    command: npm start server
+    # restart: always
   api:
     container_name: api
     build:
