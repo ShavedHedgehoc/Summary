@@ -27,10 +27,12 @@ import {LabRecord} from "./labrecords/labrecords.model";
 import { RolesService } from './roles/roles.service';
 import { RolesController } from './roles/roles.controller';
 import { RolesModule } from './roles/roles.module';
+import { Role } from "./roles/roles.model";
+import { UserRoles } from "./roles/user-roles.model";
 
 @Module({
-    controllers: [RolesController],
-    providers: [RolesService],
+    controllers: [],
+    providers: [],
     imports: [
         ConfigModule.forRoot({
             envFilePath: '../.env'
@@ -54,6 +56,8 @@ import { RolesModule } from './roles/roles.module';
                 User,
                 LabStatus,
                 LabRecord,
+                Role,
+                UserRoles
             ],
             autoLoadModels: true
         }),
@@ -69,7 +73,7 @@ import { RolesModule } from './roles/roles.module';
         ConnectionsModule,
         LabStatusesModule,
         LabRecordsModule,
-        RolesModule,
+        RolesModule,    
     ]
 })
 export class AppModule {
