@@ -24,18 +24,21 @@ import {LabStatusesModule} from './labstatuses/labstatuses.module';
 import {LabStatus} from "./labstatuses/labstatuses.model";
 import { LabRecordsModule } from './labrecords/labrecords.module';
 import {LabRecord} from "./labrecords/labrecords.model";
+import { RolesService } from './roles/roles.service';
+import { RolesController } from './roles/roles.controller';
+import { RolesModule } from './roles/roles.module';
 
 @Module({
-    controllers: [],
-    providers: [],
+    controllers: [RolesController],
+    providers: [RolesService],
     imports: [
         ConfigModule.forRoot({
             envFilePath: '../.env'
         }),
         SequelizeModule.forRoot({
             dialect: 'postgres',
-            // host: process.env.POSTGRES_HOST,
-            host: '172.23.0.2',
+            host: process.env.POSTGRES_HOST,
+            // host: '172.23.0.2',
             port: Number(process.env.POSTGRES_PORT),
             username: process.env.POSTGRES_USER,
             password: process.env.POSTGRES_PASSWORD,
@@ -66,6 +69,7 @@ import {LabRecord} from "./labrecords/labrecords.model";
         ConnectionsModule,
         LabStatusesModule,
         LabRecordsModule,
+        RolesModule,
     ]
 })
 export class AppModule {

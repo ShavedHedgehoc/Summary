@@ -79,21 +79,21 @@ const Laboratory: React.FC = (): JSX.Element => {
     }
     const hideAddWindow = () =>{
         setModalVisible(false);
-        fetchSummary(2, '2022-05-23');
+        fetchSummary(1, '2022-05-23');
     }
 
     useEffect(() => {
-        fetchSummary(2, '2022-05-23');
+        fetchSummary(1, '2022-05-23');
         fetchLabStatus();
     }, [])
 
 
 
     const columns = [
-        {id: '1', label: 'Код 1С'},
+        { id: '4', label: 'Конвейер' },        
         {id: '2', label: 'Продукт'},
         {id: '3', label: 'Варка'},
-        {id: '4', label: 'Конвейер'},
+        
         {id: '5', label: 'Аппарат'},
         {id: '6', label: 'Емкость'},
         {id: '7', label: 'План'},
@@ -121,13 +121,13 @@ const Laboratory: React.FC = (): JSX.Element => {
                     <tbody>
                     {labData.map(item =>
                         <tr key={item.id}>
-                            <td>{item.product.id}</td>
+                            <td>{item.conveyor.name}</td>
                             <td>{item.product.name}</td>
                             <td>{item.batch.name}</td>
-                            <td>{item.plan}</td>
+                            
                             <td>{item.apparatus.name}</td>
                             <td>{item.can.name}</td>
-                            <td>{item.conveyor.name}</td>
+                            <td>{item.plan}</td>                            
                             <td>{item.labRecords.length > 0 ? item.labRecords[0].labStatus.name : "-"}</td>
                             <td>
                                 <button className="btn btn-sm btn-info shadow-none"

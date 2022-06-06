@@ -20,7 +20,7 @@ const LabModal = ({id, statuses, show, onHide}: LabModalProps) => {
         const formData = {
             "summaryId": id,
             "labStatusId": status,
-            "userId": 2
+            "userId": 3
         }
         createLabRecord(formData).then(data => onHide())
     }
