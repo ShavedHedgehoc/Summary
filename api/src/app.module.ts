@@ -29,6 +29,9 @@ import { RolesController } from './roles/roles.controller';
 import { RolesModule } from './roles/roles.module';
 import { Role } from "./roles/roles.model";
 import { UserRoles } from "./roles/user-roles.model";
+import { TokenModule } from './token/token.module';
+import { Token } from "./token/token.model";
+import { AuthModule } from './auth/auth.module';
 
 @Module({
     controllers: [],
@@ -58,7 +61,8 @@ import { UserRoles } from "./roles/user-roles.model";
                 LabStatus,
                 LabRecord,
                 Role,
-                UserRoles
+                UserRoles,
+                Token
             ],
             autoLoadModels: true
         }),
@@ -74,7 +78,9 @@ import { UserRoles } from "./roles/user-roles.model";
         ConnectionsModule,
         LabStatusesModule,
         LabRecordsModule,
-        RolesModule,    
+        RolesModule,
+        TokenModule,
+        AuthModule,    
     ]
 })
 export class AppModule {
